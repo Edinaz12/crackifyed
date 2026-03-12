@@ -2,35 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwipeMatch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>SwipeMatch AI</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="tinder">
-        <div class="tinder--status">
-            <i class="fa fa-remove"></i>
-            <i class="fa fa-heart"></i>
+    <div class="app-container">
+        <header class="top-bar">
+            <div class="icon">👤</div>
+            <div class="logo">SwipeMatch</div>
+            <div class="icon">💬</div>
+        </header>
+
+        <div id="card-stack" class="card-container">
+            </div>
+
+        <div class="status-overlay">
+            <div class="status-icon nope">NOPE</div>
+            <div class="status-icon like">LIKE</div>
         </div>
 
-        <div class="tinder--cards">
-            <div class="tinder--card">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80">
-                <h3>Sarah, 24</h3>
-                <p>Love hiking and photography.</p>
-            </div>
-            <div class="tinder--card">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80">
-                <h3>Jessica, 22</h3>
-                <p>Coffee addict and dog mom.</p>
-            </div>
-        </div>
-
-        <div class="tinder--buttons">
-            <button id="nope">✖</button>
-            <button id="love">❤</button>
-        </div>
+        <footer class="controls">
+            <button class="btn undo">↺</button>
+            <button class="btn discard" onclick="handleBtnClick(false)">✖</button>
+            <button class="btn star">★</button>
+            <button class="btn heart" onclick="handleBtnClick(true)">❤</button>
+            <button class="btn lightning">⚡</button>
+        </footer>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
