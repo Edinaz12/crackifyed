@@ -7,8 +7,6 @@ import {
   OneToMany,
   Index,
 } from 'typeorm';
-import { DateRating } from './date-rating.entity';
-import { PersonImage } from './person-image.entity';
 
 @Entity('person')
 @Index(['name'])
@@ -28,16 +26,16 @@ export class Person {
   @Column({ type: 'text', nullable: true })
   description: string;
 
-  @OneToMany(() => PersonImage, (image) => image.person, {
+  @OneToMany('PersonImage', 'person', {
     eager: true,
     cascade: true,
   })
-  images: PersonImage[];
+  images: any[];
 
-  @OneToMany(() => DateRating, (rating) => rating.person, {
+  @OneToMany('DateRating', 'person', {
     cascade: true,
   })
-  ratings: DateRating[];
+  ratings: any[];
 
   @CreateDateColumn()
   createdAt: Date;
